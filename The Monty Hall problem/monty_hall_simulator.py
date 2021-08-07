@@ -60,4 +60,4 @@ for i in players:
         i.wins += temp
         if i.name == 'Gina' and temp == 0:
             i.choice2 = 'stay' if i.choice2 == 'switch' else 'switch'
-    print("%s win rate: %.2f" % (i.name, ((i.wins/nrounds)*100)))
+    print("%5s win rate: %.2f" % (i.name, ((i.wins/nrounds)*100)))
