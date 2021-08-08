@@ -29,7 +29,9 @@ Made by: Ana C Maia Atala. :e-mail: @ ana.atala@unemat.br
 The Monty Hall Problem is a probability puzzle as follows:
 
 ```txt
-Suppose you're on a game show, and you're giving the choice of three doors: Behind one door is a car, behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat, he then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
+Suppose you're on a game show, and you're giving the choice of three doors: Behind one door is a car, behind the others, goats.
+You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat,
+he then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 ```
 
 The idea of the program is to simulate 1000 rounds of the monty hall problem for different players, each player will have a different strategy. and their result will be shown as their win percentage.
