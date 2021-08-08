@@ -40,3 +40,7 @@ tempCodeRunnerFile.py
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Program output files #
+########################
+word_value_output.txt
