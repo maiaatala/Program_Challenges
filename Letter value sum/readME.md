@@ -27,11 +27,11 @@ Made by: Ana C Maia Atala. 📧 @ ana.atala@unemat.br
 Every letter is assigned a value, 1 for ```a``` to 26 for ```z```. Find the sum of the values of the letters in any given character string.
 ex:
 > lettersum("") => 0
-lettersum("a") => 1
-lettersum("z") => 26
-lettersum("cab") => 6
-lettersum("excellent") => 100
-lettersum("microspectrophotometries") => 317
+> lettersum("a") => 1
+> lettersum("z") => 26
+> lettersum("cab") => 6
+> lettersum("excellent") => 100
+> lettersum("microspectrophotometries") => 317
 
 ### Extra Challenges
 
