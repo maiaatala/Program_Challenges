@@ -3,7 +3,7 @@
 Challenge resolved with the intent of training python.
 [link to the challenge page](https://www.reddit.com/r/dailyprogrammer/comments/n94io8/20210510_challenge_389_easy_the_monty_hall_problem/)
 
-## Table of Contents
+## Table of Contents 
 
 - [Monty Hall Simulator](#monty-hall-simulator)
   - [Table of Contents](#table-of-contents)
