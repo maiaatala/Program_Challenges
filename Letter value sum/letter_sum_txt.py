@@ -12,7 +12,7 @@ def release(a):
 def menu1():
     os.system('cls')
     print("\nThe letter sum calculator Program.\n   --special chars have neutral value--   ")
-    print("\t1 - input your own word.\n\t2 - Solve reddit's challenges!\n\t3 - byeee.")
+    print("\t1 - input your own word.\n\t2 - Solve reddit's challenges!\n\t0 - byeee.")
 # Show reddit challenge menu
 def menu2():
     os.system('cls')
@@ -20,8 +20,8 @@ def menu2():
     print("\t1 - Write all output in a .txt file.\n\t2 - Show words with value above 315.\n\t3 - Show total of words with odd letter sum")
     print('\t4 - Show the most common letter value sum and how many words share it')
     print('\t5 - Show words with same letter sum and lenght difference of 11 chars.')
-    # print('\t6 - Show words with letter sum above 188, equal on their sum but with no chars in commom.')
-    # print("\t7 - Show a list of words with different lenghts, descending lenght and ascending letter sum")
+    print('\t6 - Show words with letter sum above 188, equal on their sum but with no chars in commom.')
+    print("\t7 - Show a list of words with different lenghts, descending lenght and ascending letter sum")
     print('\t0 - go out.')
 # calculates the value of each word, takes the word and the dic with each word value
 def calculate_value(word, LvalueD):
@@ -90,6 +90,36 @@ def sameSum_difLenght(words, LvalueD):
     print("Words with same letter value sum and lenght differnece of 11 chars:")
     print(outputarr)
     #[['zyzzyva', 'biodegradabilities'], ['voluptuously', 'electroencephalographic']]
+# outuputs words with sum above 188, that have equal sum and no chars in common
+def sameSum_noChars(words, LvalueD):
+    above_188 = {word: value for word in words if (value := calculate_value(word, LvalueD)) >= 188}
+    above_188_keys = [*above_188]
+    equal_pair = []
+    for i in range(x := len(above_188_keys)):
+        for j in range(i, x):
+            if above_188.get(above_188_keys[i]) == above_188.get(above_188_keys[j]):
+                for char in above_188_keys[i]:
+                    if char in above_188_keys[j]:
+                        break
+                else:
+                    equal_pair.append([above_188_keys[i], above_188_keys[j]])
+    [print('%s & %s: %i' % (n1, n2, above_188.get(n1))) for n1, n2 in equal_pair]
+    # [['cytotoxicity', 'unreservedness'], ['defenselessnesses', 'microphotographic'], ['defenselessnesses', 'photomicrographic']]
+# outputs words listi wht ascending sum and descrecing lenght
+def ascSum_desLen(words, LvalueD):
+    words.sort(key = len)
+    in_file(words,LvalueD)
+    outputarr = []
+    templen = len(words[-2])
+    tempword = words[-2]
+    print(tempword)
+    for i in range(len(words)-2, 0, -1):
+        if templen > (looplen := len(words[i])) and tempword not in outputarr:
+            outputarr.append(tempword)
+        templen = looplen
+        if calculate_value(words[i], LvalueD) > calculate_value(tempword, LvalueD) and looplen < len(tempword):
+            tempword = words[i]
+    print(outputarr)
 
 # create alphabet string
 alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -113,7 +143,9 @@ while (m := input("escolha: ")) in ['1', '2']:  # walrus operator
             '2': above_315,
             '3': odd_numbers,
             '4': most_common_value_sum,
-            '5': sameSum_difLenght
+            '5': sameSum_difLenght,
+            '6': sameSum_noChars,
+            '7': ascSum_desLen
         }
         menu2()
         while (m1 := input("escolha: ")) in choice_dic:  # ASSIGMENT EXPRESSIONS FOR THE WIN
