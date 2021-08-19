@@ -45,6 +45,9 @@ def monty_hall(choice1, choice2): # return 1 for win and 0 for loss
     else:
         return(0)
 
+print(" --The Monty Hall Simulator-- ")
+print("  ¶ Made by: Ana C. M. Atala\n")
+
 random.seed()  # start the random
 # print("Monyty hall problem, 3 doors, choosing #1 and not switching: %s" % ('win' if monty_hall(1, False) == 1 else 'lost') )
 nrounds = 1000
@@ -55,8 +58,11 @@ dave = player('Dave', 'r', 'stay')
 erin = player('Erin', 'r', 'switch')
 frank = player('Frank', '1', '2')
 gina = player('Gina', '1', 'stay')
-user = player(input("your name: "), input("your door ('1', '2', '3' or 'r' for random): "), input("your #2 choice ('1', '2', '3', 'stay', 'swich', 'r'): "))
-players = [alice, bob, carol, dave, erin, frank, gina, user]
+players = [alice, bob, carol, dave, erin, frank, gina]
+
+if (input("Wanna input custom player? (yes/no): ").lower()) == 'yes':
+    user = player(input("Your name: "), input("Your door ('1', '2', '3' or 'r' for random): "), input("Your #2 choice ('1', '2', '3', 'stay', 'switch', 'r'): "))
+    players.append(user)
 
 for i in players:
     for j in range(nrounds):
@@ -64,4 +70,6 @@ for i in players:
         i.wins += temp
         if i.name == 'Gina' and temp == 0:
             i.choice2 = 'stay' if i.choice2 == 'switch' else 'switch'
-    print("%5s win %s: %.2f" % (i.name, ((i.wins/nrounds)*100), '%'))
+    print("%5s win %s: %.2f%s" % (i.name, '%', ((i.wins/nrounds)*100), '%'))
+
+print("\nbyeee.")

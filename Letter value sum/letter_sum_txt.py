@@ -19,18 +19,20 @@ def release(a):
 # show main menu, take user input or reddit challenge
 def menu1():
     os.system('cls')
-    print("\nThe letter sum calculator Program.\n   --special chars have neutral value--   ")
-    print("\t1 - input your own word.\n\t2 - Solve reddit's challenges!\n\t0 - byeee.")
+    print("\n    The letter sum calculator Program.")
+    print("   --special chars have neutral value--   ")
+    print("       ¶ Made by: Ana C. M. Atala\n")
+    print("\t1 - Input your own word.\n\t2 - Solve reddit's challenges!\n\t0 - byeee.")
 # Show reddit challenge menu
 def menu2():
     os.system('cls')
     print("\n  Reddit's Challenges!")
-    print("\t1 - Write all output in a .txt file.\n\t2 - Show words with value above 315.\n\t3 - Show total of words with odd letter sum")
-    print('\t4 - Show the most common letter value sum and how many words share it')
+    print("\t1 - Write all output in a .txt file.\n\t2 - Show words with value above 315.\n\t3 - Show total of words with odd letter sum.")
+    print('\t4 - Show the most common letter value sum and how many words share it.')
     print('\t5 - Show words with same letter sum and lenght difference of 11 chars.')
     print('\t6 - Show words with letter sum above 188, equal on their sum but with no chars in commom.')
-    print("\t7 - Show a list of words with different lenghts, descending lenght and ascending letter sum")
-    print('\t0 - go out.')
+    print("\t7 - Show a list of words with different lenghts, descending lenght and ascending letter sum.")
+    print('\t0 - byeee.')
 # calculates the value of each word, takes the word and the dic with each word value
 def calculate_value(word):
     value = 0
